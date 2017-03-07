@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>转动的正方体</title>
+<style type="text/css">
+/*只在firefox调试成功*/
+#cube{
+	-webkit-perspective:1500;
+	   -moz-perspective:1500;
+	-webkit-perspective-origin:50% 50%;
+	   -moz-perspective-origin:50% 50%;
+	}
+
+.face_group{
+	-webkit-transform-style:preserve-3d;
+	   -moz-transform-style:preserve-3d;
+	width:200px;
+	height:200px;
+	margin:100px auto;
+	position:relative;
+	-moz-transition:5s;
+	-webkit-transition:5s;
+	-moz-transform-origin:center center;
+	-webkit-transform-origin:center center;
+	animation:face_group 5s infinite linear; 
+	}
+    @keyframes face_group{                       
+        0{
+            transform:rotate3d(1, 1, 1,0deg);
+            }
+        100%{
+            transform:rotate3d(1, 1, 1,360deg);
+        }
+    }   
+	
+.face{
+	width:200px;
+	height:200px;
+	background-color:#90F;
+	color:#fff;
+	line-height:200px;
+	font-size:200px;
+	text-align:center;
+	border:1px solid #FFF;
+	position:absolute;
+	opacity:0.8;
+	}
+	
+#face1{
+	
+	-webkit-transform-origin:bottom;
+	   -moz-transform-origin:bottom;
+	}
+	
+#face2{
+	-webkit-transform-origin:right;
+	   -moz-transform-origin:right;
+	-webkit-transform:rotateY(90deg);
+	   -moz-transform:rotateY(90deg);
+	}
+	
+#face3{
+    -moz-transform-origin:bottom;
+	-moz-transform:translateZ(200px);
+	}
+	
+#face4{
+	-webkit-transform-origin:left;
+	   -moz-transform-origin:left;
+	-webkit-transform:rotateY(-90deg);
+	   -moz-transform:rotateY(-90deg);
+	}
+	
+#face5{
+	-webkit-transform-origin:bottom;
+	   -moz-transform-origin:bottom;
+	-webkit-transform:rotateX(-90deg);
+	   -moz-transform:rotateX(-90deg);
+	}
+	
+#face6{
+	-webkit-transform-origin:top;
+	   -moz-transform-origin:top;
+	-webkit-transform:rotateX(90deg);
+	   -moz-transform:rotateX(90deg);
+	}
+</style>
+</head>
+
+<body>
+<div class="cube">
+	<div class="face_group">
+    	<div class="face" id="face1">1</div>
+    	<div class="face" id="face2">2</div>
+    	<div class="face" id="face3">3</div>
+    	<div class="face" id="face4">4</div>
+    	<div class="face" id="face5">5</div>
+    	<div class="face" id="face6">6</div>
+    </div>
+</div>
+</body>
+</html>
